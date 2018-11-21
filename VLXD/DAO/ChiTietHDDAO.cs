@@ -27,5 +27,15 @@ namespace DAO
             db.ChiTietHD.Remove(cthd);
             db.SaveChanges();
         }
+        public void UpdateChiTietHDDAO(ChiTietHD cthdhdToUpDate)
+        {
+            ChiTietHD cthd = db.ChiTietHD.Find(cthdhdToUpDate.MaHD);
+            cthd.MaHD = cthdhdToUpDate.MaHD;
+            cthd.MaSP = cthdhdToUpDate.MaSP;
+            cthd.GiaBan = cthdhdToUpDate.GiaBan;
+            cthd.GiamGia = cthdhdToUpDate.GiamGia;
+            cthd.ThanhTien = cthdhdToUpDate.ThanhTien;
+            db.SaveChanges();
+        }
     }
 }
