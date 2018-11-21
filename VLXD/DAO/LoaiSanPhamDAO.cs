@@ -47,5 +47,11 @@ namespace DAO
             loai.TenLoai = loaiToUpdate.TenLoai;
             db.SaveChanges();
         }
+         public List<LoaiSanPham> SearchMaLoaiSPDAO(int key)
+        {
+            List<LoaiSanPham> result = new List<LoaiSanPham>();
+            result = db.LoaiSanPham.Where(p => p.MaLoaiSP == key).ToList();
+            return result;
+        }
     }
 }
