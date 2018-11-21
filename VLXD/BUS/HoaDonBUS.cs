@@ -26,5 +26,14 @@ namespace BUS
         {
             hdDAO.AddHDDAO(hd,cthd);
         }
+         public void DeleteHDBUS(int id)
+        {
+            hdDAO.DeleteHDDAO(id);
+        }
+
+        public void UpdateHDBUS(HoaDon hdToUpDate, ChiTietHD cthdToUpdate)
+        {
+            hdDAO.UpdateHDDAO(hdToUpDate, cthdToUpdate);
+        }
     }
 }
