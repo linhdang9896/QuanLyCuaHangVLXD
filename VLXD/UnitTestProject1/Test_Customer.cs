@@ -48,5 +48,20 @@ namespace UnitTest
 
             Assert.AreEqual(1, khBUS.SearchTenKHBUS(kh.TenKH).Count);
         }
+        [TestMethod]
+        public void Test_DeleteKhachHang_Success()
+        {
+            khBUS = new KhachHangBUS();
+            Assert.AreEqual(11, khBUS.LoadKHBUS().Count);
+            khBUS.DeleteKHBUS(1011);
+            Assert.AreEqual(10, khBUS.LoadKHBUS().Count);
+        }
+
+        [TestMethod]
+        public void Test_SearchMaKhachHang_Suscess()
+        {
+            khBUS = new KhachHangBUS();
+            Assert.AreEqual(1, khBUS.SearchMaKHBUS(1).Count);
+        }
     }
 }
