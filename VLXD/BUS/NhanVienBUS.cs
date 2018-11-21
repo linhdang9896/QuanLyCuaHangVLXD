@@ -29,5 +29,14 @@ namespace BUS
         {
             nvDAO.UpdateNVDAO(nvToUpDate);
         }
+        public List<NhanVien> SearchMaNVBUS(int key)
+        {
+            return nvDAO.SearchMaNVDAO(key);
+        }
+
+        public List<NhanVien> SearchTenNVBUS(string key)
+        {
+            return nvDAO.SearchTenNVDAO(key);
+        }
     }
 }
