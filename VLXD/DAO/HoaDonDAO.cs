@@ -44,7 +44,7 @@ namespace DAO
                 return 1;
             }
         }
-                public void AddHDDAO(HoaDon hd, ChiTietHD cthd)
+        public void AddHDDAO(HoaDon hd, ChiTietHD cthd)
         {
             db.HoaDon.Add(hd);
             db.SaveChanges();
@@ -82,5 +82,68 @@ namespace DAO
             hd.NgayDatHang = hdToUpDate.NgayDatHang;
             hd.NgayGiaoHang = hdToUpDate.NgayGiaoHang;
             db.SaveChanges();
+        }
+        public List<HD_CTHD> SearchMaHDDAO(int key)
+        {
+            List<HD_CTHD> result = (from hd in db.HoaDon
+                                    join cthd in db.ChiTietHD
+                                    on hd.MaHD equals cthd.MaHD
+                                    where hd.MaHD == key
+                                    select new HD_CTHD(){
+                                        MaHD =  hd.MaHD,
+                                        MaKH = hd.MaKH, 
+                                        MaNV = hd.MaNV,
+                                        NgayDatHang = hd.NgayDatHang,
+                                        NgayGiaoHang = hd.NgayGiaoHang,
+                                        MaSP = cthd.MaSP,
+                                        GiaBan = cthd.GiaBan,
+                                        SoLuong = cthd.SoLuong,
+                                        GiamGia = cthd.GiamGia,
+                                        ThanhTien = cthd.ThanhTien
+                                    }).ToList();
+            return result;
+        }
+
+        public List<HD_CTHD> SearchMaKHDAO(int key)
+        {
+            List<HD_CTHD> result = (from hd in db.HoaDon
+                                    join cthd in db.ChiTietHD
+                                    on hd.MaHD equals cthd.MaHD
+                                    where hd.MaKH == key
+                                    select new HD_CTHD(){
+                                        MaHD =  hd.MaHD,
+                                        MaKH = hd.MaKH, 
+                                        MaNV = hd.MaNV,
+                                        NgayDatHang = hd.NgayDatHang,
+                                        NgayGiaoHang = hd.NgayGiaoHang,
+                                        MaSP = cthd.MaSP,
+                                        GiaBan = cthd.GiaBan,
+                                        SoLuong = cthd.SoLuong,
+                                        GiamGia = cthd.GiamGia,
+                                        ThanhTien = cthd.ThanhTien
+                                    }).ToList();
+            return result;
+        }
+
+        public List<HD_CTHD> SearchNgayDatHangDAO(DateTime ngayBD, DateTime ngayKT)
+        {
+            List<HD_CTHD> result = (from hd in db.HoaDon
+                                    join cthd in db.ChiTietHD
+                                    on hd.MaHD equals cthd.MaHD
+                                    where hd.NgayDatHang >= ngayBD && hd.NgayDatHang <= ngayKT
+                                    select new HD_CTHD()
+                                    {
+                                        MaHD = hd.MaHD,
+                                        MaKH = hd.MaKH,
+                                        MaNV = hd.MaNV,
+                                        NgayDatHang = hd.NgayDatHang,
+                                        NgayGiaoHang = hd.NgayGiaoHang,
+                                        MaSP = cthd.MaSP,
+                                        GiaBan = cthd.GiaBan,
+                                        SoLuong = cthd.SoLuong,
+                                        GiamGia = cthd.GiamGia,
+                                        ThanhTien = cthd.ThanhTien
+                                    }).ToList();
+            return result;
         }
 }
