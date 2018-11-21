@@ -29,5 +29,14 @@ namespace BUS
         {
             cthdDAO.UpdateChiTietHDDAO(cthdToUpDate);
         }
+        public List<ChiTietHD> SearchChiTietHD_MaHDBUS(int key)
+        {
+            return cthdDAO.SearchChiTietHD_MaHDDAO(key);
+        }
+
+        public List<ChiTietHD> SearchChiTietHD_MaSPBUS(int key)
+        {
+            return cthdDAO.SearchChiTietHD_MaSPDAO(key);
+        }
     }
 }
