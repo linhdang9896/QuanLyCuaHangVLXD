@@ -12,7 +12,7 @@ namespace UnitTest
     {
         NhanVienBUS nvBUS;
         NhanVien nv;
-        
+
         [TestMethod]
         public void Test_LoginByNhanVien()
         {
@@ -20,6 +20,16 @@ namespace UnitTest
 
             int expected = 2;
             int actual = uBUS.DangNhapBUS("Tam", "123");
+
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Test_LoginByQuanLy()
+        {
+            uBUS = new TaiKhoanBUS();
+
+            int expected = 1;
+            int actual = uBUS.DangNhapBUS("Long", "123");
 
             Assert.AreEqual(expected, actual);
         }
