@@ -85,6 +85,12 @@ namespace DAO
             result = db.TaiKhoan.Where(p => p.MaTaiKhoan == key).ToList();
             return result;
         }
+        public List<TaiKhoan> SearchTenTaiKhoanDAO(string key)
+        {
+            List<TaiKhoan> result = new List<TaiKhoan>();
+            result = db.TaiKhoan.Where(p => p.TenTaiKhoan == key).ToList();
+            return result;
+        }
 
     }
 }
