@@ -20,5 +20,9 @@ namespace BUS
         {
             spDAO.AddSPDAO(sp);
         }
+        public void DeleteSPBUS(int id)
+        {
+            spDAO.DeleteSPDAO(id);
+        }
     }
 }
