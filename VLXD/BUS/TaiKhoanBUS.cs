@@ -25,5 +25,14 @@ namespace BUS
         {
             userDAO.AddUserDAO(user);
         }
+        public void DeleteUserBUS(int idToDelete)
+        {
+            userDAO.DeleteUserDAO(idToDelete);
+        }
+
+        public void UpdateUserBUS(TaiKhoan user)
+        {
+            userDAO.UpdateUserDAO(user);
+        }
     }
 }
