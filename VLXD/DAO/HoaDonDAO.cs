@@ -66,4 +66,21 @@ namespace DAO
             db.HoaDon.Remove(hd);
             db.SaveChanges();
         }
+         public void UpdateHDDAO(HoaDon hdToUpDate, ChiTietHD cthdToUpDate)
+        {
+            int id = hdToUpDate.MaHD;
+            ChiTietHD cthd = db.ChiTietHD.Where(p => p.MaHD == id).SingleOrDefault();
+            cthd.GiaBan = cthdToUpDate.GiaBan;
+            cthd.SoLuong = cthdToUpDate.SoLuong;
+            cthd.GiamGia = cthdToUpDate.GiamGia;
+            cthd.ThanhTien = cthdToUpDate.ThanhTien;
+            db.SaveChanges();
+
+            HoaDon hd = db.HoaDon.Find(hdToUpDate.MaHD);
+            hd.MaKH = hdToUpDate.MaKH;
+            hd.MaNV = hdToUpDate.MaNV;
+            hd.NgayDatHang = hdToUpDate.NgayDatHang;
+            hd.NgayGiaoHang = hdToUpDate.NgayGiaoHang;
+            db.SaveChanges();
+        }
 }
