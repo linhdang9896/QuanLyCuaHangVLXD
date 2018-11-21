@@ -58,5 +58,20 @@ namespace UnitTest
 
             Assert.AreEqual(1, nsxBUS.SearchMaNSXBUS(1).Count);
         }
+        [TestMethod]
+        public void Test_SearchMaNSX_Fail()
+        {
+            nsxBUS = new NhaSanXuatBUS();
+
+            Assert.AreEqual(0, nsxBUS.SearchMaNSXBUS(100).Count);
+        }
+
+        [TestMethod]
+        public void Test_SearchTenNSX_Suscess()
+        {
+            nsxBUS = new NhaSanXuatBUS();
+
+            Assert.AreEqual(1, nsxBUS.SearchTenNSXBUS("CÔNG TY TNHH GẠCH AN PHÚ GIA").Count);
+        }
     }
 }
