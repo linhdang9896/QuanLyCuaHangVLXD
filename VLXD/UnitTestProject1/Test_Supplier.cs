@@ -42,5 +42,21 @@ namespace UnitTest
 
             Assert.AreEqual(1, nsxBUS.SearchTenNSXBUS(nsx.TenCongTyNSX).Count);
         }
+        [TestMethod]
+        public void Test_DeleteNSX_Success()
+        {
+            nsxBUS = new NhaSanXuatBUS();
+            Assert.AreEqual(5, nsxBUS.LoadNSXBUS().Count);
+            nsxBUS.DeleteNSXBUS(6);
+            Assert.AreEqual(4, nsxBUS.LoadNSXBUS().Count);
+        }
+
+        [TestMethod]
+        public void Test_SearchMaNSX_Suscess()
+        {
+            nsxBUS = new NhaSanXuatBUS();
+
+            Assert.AreEqual(1, nsxBUS.SearchMaNSXBUS(1).Count);
+        }
     }
 }
