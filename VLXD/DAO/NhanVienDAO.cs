@@ -27,6 +27,17 @@ namespace DAO
             db.NhanVien.Remove(nv);
             db.SaveChanges();
         }
+        public void UpdateNVDAO(NhanVien nvToUpDate)
+        {
+            NhanVien nv = db.NhanVien.Find(nvToUpDate.MaNV);
+            nv.HoNV = nvToUpDate.HoNV;
+            nv.TenNV = nvToUpDate.TenNV;
+            nv.GioiTinh = nvToUpDate.GioiTinh;
+            nv.NgaySinh = nvToUpDate.NgaySinh;
+            nv.DiaChi = nvToUpDate.DiaChi;
+            nv.DienThoai = nvToUpDate.DienThoai;
+            db.SaveChanges();
+        }
         
     }
 }
