@@ -27,6 +27,21 @@ namespace DAO
             db.SanPham.Remove(sp);
             db.SaveChanges();
         }
+        public void UpdateSPDAO(SanPham spToUpdate)
+        {
+            SanPham sp = db.SanPham.Find(spToUpdate.MaSP);
+
+            sp.TenSP = spToUpdate.TenSP;
+            sp.SoLuongTon = spToUpdate.SoLuongTon;
+            sp.DonGia = spToUpdate.DonGia;
+            sp.DonViTinh = spToUpdate.DonViTinh;
+            sp.MoTa = spToUpdate.MoTa;
+            sp.HinhAnh = spToUpdate.HinhAnh;
+            sp.MaLoaiSP = spToUpdate.MaLoaiSP;
+            sp.MaNSX = spToUpdate.MaNSX;
+
+            db.SaveChanges();
+        }
         
     }
 }
