@@ -72,6 +72,13 @@ namespace DAO
             user.MaNV = userToUpdate.MaNV;
             db.SaveChanges();
         }
+        public void UpdateUserMaNVDAO(TaiKhoan userToUpdate)
+        {
+            TaiKhoan user = db.TaiKhoan.Find(userToUpdate.MaNV);
+            user.TenTaiKhoan = userToUpdate.TenTaiKhoan;
+            user.MatKhau = userToUpdate.MatKhau;
+            db.SaveChanges();
+        }
 
     }
 }
