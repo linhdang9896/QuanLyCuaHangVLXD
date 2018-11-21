@@ -25,5 +25,9 @@ namespace BUS
         {
             nsxDAO.DeleteNSXDAO(id);
         }
+        public void UpdateNSXBUS(NhaSanXuat nsxToUpdate)
+        {
+            nsxDAO.UpdateNSXDAO(nsxToUpdate);
+        }
     }
 }
