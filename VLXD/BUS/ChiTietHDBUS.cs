@@ -25,5 +25,9 @@ namespace BUS
         {
             cthdDAO.DeleteChiTietHDDAO(maHD, maSP);
         }
+        public void UpdatChiTietHDBUS(ChiTietHD cthdToUpDate)
+        {
+            cthdDAO.UpdateChiTietHDDAO(cthdToUpDate);
+        }
     }
 }
