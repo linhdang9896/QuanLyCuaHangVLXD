@@ -34,6 +34,19 @@ namespace DAO
             nsx.DienThoaiNSX = nsxToUpdate.DienThoaiNSX;
             db.SaveChanges();
         }
+        public List<NhaSanXuat> SearchMaNSXDAO(int key)
+        {
+            List<NhaSanXuat> result = new List<NhaSanXuat>();
+            result = db.NhaSanXuat.Where(p => p.MaNSX == key).ToList();
+            return result;
+        }
+
+        public List<NhaSanXuat> SearchTenNSXDAO(string key)
+        {
+            List<NhaSanXuat> result = new List<NhaSanXuat>();
+            result = db.NhaSanXuat.Where(p => p.TenCongTyNSX == key).ToList();
+            return result;
+        }
         
     }
 }
