@@ -28,5 +28,14 @@ namespace BUS
         {
             spDAO.UpdateSPDAO(spToUpdate);
         }
+        public List<SanPham> SearchMaSPBUS(int key)
+        {
+            return spDAO.SearchMaSPDAO(key);
+        }
+
+        public List<SanPham> SearchTenSPBUS(string key)
+        {
+            return spDAO.SearchTenSPDAO(key);
+        }
     }
 }
