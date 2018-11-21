@@ -34,5 +34,9 @@ namespace BUS
         {
             userDAO.UpdateUserDAO(user);
         }
+        public void UpdateUserMaNVBUS(TaiKhoan user)
+        {
+            userDAO.UpdateUserMaNVDAO(user);
+        }
     }
 }
