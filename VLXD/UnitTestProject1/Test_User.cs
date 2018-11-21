@@ -61,5 +61,12 @@ namespace UnitTest
 
             Assert.AreEqual(1, userBUS.SearchMaTaiKhoan(1).Count);
         }
+        [TestMethod]
+        public void Test_SearchMaUser_Fail()
+        {
+            userBUS = new TaiKhoanBUS();
+
+            Assert.AreEqual(0, userBUS.SearchMaTaiKhoan(4).Count);
+        }
     }
 }
