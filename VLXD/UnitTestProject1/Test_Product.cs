@@ -65,5 +65,28 @@ namespace UnitTest
 
             Assert.AreEqual(1, spBUS.SearchMaSPBUS(2).Count);
         }
+        [TestMethod]
+        public void Test_SearchMaSP_Fail()
+        {
+            spBUS = new SanPhamBUS();
+
+            Assert.AreEqual(0, spBUS.SearchMaSPBUS(100).Count);
+        }
+
+        [TestMethod]
+        public void Test_SearchTenSP_Suscess()
+        {
+            spBUS = new SanPhamBUS();
+
+            Assert.AreEqual(1, spBUS.SearchTenSPBUS("Đá xây").Count);
+        }
+
+        [TestMethod]
+        public void Test_SearchTenSP_Fail()
+        {
+            spBUS = new SanPhamBUS();
+
+            Assert.AreEqual(0, spBUS.SearchTenSPBUS("Tinh tinh").Count);
+        }
     }
 }
