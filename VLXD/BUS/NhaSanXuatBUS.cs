@@ -29,5 +29,14 @@ namespace BUS
         {
             nsxDAO.UpdateNSXDAO(nsxToUpdate);
         }
+        public List<NhaSanXuat> SearchMaNSXBUS(int key)
+        {
+            return nsxDAO.SearchMaNSXDAO(key);
+        }
+
+        public List<NhaSanXuat> SearchTenNSXBUS(string key)
+        {
+            return nsxDAO.SearchTenNSXDAO(key);
+        }
     }
 }
