@@ -35,5 +35,19 @@ namespace BUS
         {
             hdDAO.UpdateHDDAO(hdToUpDate, cthdToUpdate);
         }
+        public List<HD_CTHD> SearchMaHDBUS(int key)
+        {
+            return hdDAO.SearchMaHDDAO(key);
+        }
+
+        public List<HD_CTHD> SearchMaKHBUS(int key)
+        {
+            return hdDAO.SearchMaKHDAO(key);
+        }
+
+        public List<HD_CTHD> SearchNgayDatHangBUS(DateTime ngayBD, DateTime ngayKT)
+        {
+            return hdDAO.SearchNgayDatHangDAO(ngayBD, ngayKT);
+        }
     }
 }
