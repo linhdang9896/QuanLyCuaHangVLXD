@@ -16,5 +16,14 @@ namespace BUS
         {
             return cthdDAO.LoadChiTietHDDAO();
         }
+        public void AddChiTietHDBUS(ChiTietHD hd)
+        {
+            cthdDAO.AddChiTietHDDAO(hd);
+        }
+
+        public void DeleteChiTietHDBUS(int maHD, int maSP)
+        {
+            cthdDAO.DeleteChiTietHDDAO(maHD, maSP);
+        }
     }
 }
