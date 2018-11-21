@@ -42,6 +42,19 @@ namespace DAO
 
             db.SaveChanges();
         }
+        public List<SanPham> SearchMaSPDAO(int key)
+        {
+            List<SanPham> result = new List<SanPham>();
+            result = db.SanPham.Where(p => p.MaSP == key).ToList();
+            return result;
+        }
+
+        public List<SanPham> SearchTenSPDAO(string key)
+        {
+            List<SanPham> result = new List<SanPham>();
+            result = db.SanPham.Where(p => p.TenSP == key).ToList();
+            return result;
+        }
         
     }
 }
