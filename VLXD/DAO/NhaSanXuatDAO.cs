@@ -26,6 +26,14 @@ namespace DAO
             db.NhaSanXuat.Remove(nsx);
             db.SaveChanges();
         }
+        public void UpdateNSXDAO(NhaSanXuat nsxToUpdate)
+        {
+            NhaSanXuat nsx = db.NhaSanXuat.Find(nsxToUpdate.MaNSX);
+            nsx.TenCongTyNSX = nsxToUpdate.TenCongTyNSX;
+            nsx.DiaChiNSX = nsxToUpdate.DiaChiNSX;
+            nsx.DienThoaiNSX = nsxToUpdate.DienThoaiNSX;
+            db.SaveChanges();
+        }
         
     }
 }
