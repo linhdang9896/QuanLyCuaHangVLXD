@@ -37,5 +37,18 @@ namespace DAO
             kh.DienThoai = khToUpdate.DienThoai;
             db.SaveChanges();
         }
+        public List<KhachHang> SearchMaKHDAO(int key)
+        {
+            List<KhachHang> result = new List<KhachHang>();
+            result = db.KhachHang.Where(p => p.MaKH == key).ToList();
+            return result;
+        }
+
+        public List<KhachHang> SearchTenKHDAO(string key)
+        {
+            List<KhachHang> result = new List<KhachHang>();
+            result = db.KhachHang.Where(p => p.TenKH == key).ToList();
+            return result;
+        }
     }
 }
