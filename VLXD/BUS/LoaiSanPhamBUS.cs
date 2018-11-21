@@ -16,6 +16,14 @@ namespace BUS
         {
             return loaiSPDAO.LoadLoaiSPDAO();
         }
+        public int KtraTrungMaLoaiBUS(string id)
+        {
+            return loaiSPDAO.KtraTrung(id);
+        }
 
+        public void AddLoaiSPBUS(LoaiSanPham loai)
+        {
+            loaiSPDAO.AddLoaiSP(loai);
+        }
     }
 }
