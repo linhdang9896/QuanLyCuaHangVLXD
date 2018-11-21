@@ -34,9 +34,17 @@ namespace DAO
             db.LoaiSanPham.Add(loai);
             db.SaveChanges();
         }
-        public void AddLoaiSP(LoaiSanPham loai)
+        public void DeleteLoaiSPDAO(int id)
         {
-            db.LoaiSanPham.Add(loai);
+            LoaiSanPham loai = db.LoaiSanPham.Find(id);
+            db.LoaiSanPham.Remove(loai);
+            db.SaveChanges();
+        }
+        public void UpdateLoaiSPDAO(LoaiSanPham loaiToUpdate)
+        {
+            LoaiSanPham loai = db.LoaiSanPham.Find(loaiToUpdate.MaLoaiSP);
+            loai.MaLoaiSP = loaiToUpdate.MaLoaiSP;
+            loai.TenLoai = loaiToUpdate.TenLoai;
             db.SaveChanges();
         }
     }
