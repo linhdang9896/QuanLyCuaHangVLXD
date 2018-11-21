@@ -25,5 +25,14 @@ namespace BUS
         {
             loaiSPDAO.AddLoaiSP(loai);
         }
+        public void DeleteLoaiSPBUS(int id)
+        {
+            loaiSPDAO.DeleteLoaiSPDAO(id);
+        }
+
+        public void UpdateLoaiSPBUS(LoaiSanPham loaiToUpdate)
+        {
+            loaiSPDAO.UpdateLoaiSPDAO(loaiToUpdate);
+        }
     }
 }
