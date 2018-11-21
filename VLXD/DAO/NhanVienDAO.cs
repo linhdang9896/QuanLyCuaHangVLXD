@@ -38,6 +38,18 @@ namespace DAO
             nv.DienThoai = nvToUpDate.DienThoai;
             db.SaveChanges();
         }
-        
+        public List<NhanVien> SearchMaNVDAO(int key)
+        {
+            List<NhanVien> result = new List<NhanVien>();
+            result = db.NhanVien.Where(p => p.MaNV == key).ToList();
+            return result;
+        }
+
+        public List<NhanVien> SearchTenNVDAO(string key)
+        {
+            List<NhanVien> result = new List<NhanVien>();
+            result = db.NhanVien.Where(p => p.TenNV == key).ToList();
+            return result;
+        }
     }
 }
