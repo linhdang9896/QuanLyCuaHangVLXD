@@ -16,7 +16,15 @@ namespace BUS
         {
             return nvDAO.LoadNVDAO();
         }
+        public void AddNVBUS(NhanVien nv)
+        {
+            nvDAO.AddNVDAO(nv);
+        }
 
+        public void DeleteNVBUS(int id)
+        {
+            nvDAO.DeleteNVDAO(id);
+        }
         
     }
 }
