@@ -11,6 +11,15 @@ namespace UnitTest
     public class Test_Login
     {
         TaiKhoanBUS uBUS;
+        [TestMethod]
+        public void Test_LoginByNhanVien()
+        {
+            uBUS = new TaiKhoanBUS();
 
+            int expected = 2;
+            int actual = uBUS.DangNhapBUS("Tam", "123");
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
