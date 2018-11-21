@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,8 +11,8 @@ namespace DAO
     public class HoaDonDAO
     {
         VLXD db = new VLXD();
-    }
-            public List<HD_CTHD> LoadHDDAO()
+
+        public List<HD_CTHD> LoadHDDAO()
         {
             List<HD_CTHD> result = (from hd in db.HoaDon
                                     join cthd in db.ChiTietHD
@@ -66,7 +66,8 @@ namespace DAO
             db.HoaDon.Remove(hd);
             db.SaveChanges();
         }
-         public void UpdateHDDAO(HoaDon hdToUpDate, ChiTietHD cthdToUpDate)
+
+        public void UpdateHDDAO(HoaDon hdToUpDate, ChiTietHD cthdToUpDate)
         {
             int id = hdToUpDate.MaHD;
             ChiTietHD cthd = db.ChiTietHD.Where(p => p.MaHD == id).SingleOrDefault();
@@ -83,6 +84,7 @@ namespace DAO
             hd.NgayGiaoHang = hdToUpDate.NgayGiaoHang;
             db.SaveChanges();
         }
+
         public List<HD_CTHD> SearchMaHDDAO(int key)
         {
             List<HD_CTHD> result = (from hd in db.HoaDon
@@ -146,4 +148,5 @@ namespace DAO
                                     }).ToList();
             return result;
         }
+    }
 }
