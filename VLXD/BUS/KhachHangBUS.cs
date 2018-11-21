@@ -25,5 +25,19 @@ namespace BUS
         {
             khDAO.DeleteKHDAO(id);
         }
+        public void UpdateKHBUS(KhachHang khToUpdate)
+        {
+            khDAO.UpdateKHDAO(khToUpdate);
+        }
+        public List<KhachHang> SearchMaKHBUS(int key)
+        {
+            return khDAO.SearchMaKHDAO(key);
+        }
+
+        public List<KhachHang> SearchTenKHBUS(string key)
+        {
+            return khDAO.SearchTenKHDAO(key);
+        }
+        
     }
 }
