@@ -46,6 +46,16 @@ namespace DAO
 
            }
         }
+        public List<TaiKhoan> LoadUserDAO()
+        {
+            return db.TaiKhoan.ToList();
+        }
+
+        public void AddUserDAO(TaiKhoan user)
+        {
+            db.TaiKhoan.Add(user);
+            db.SaveChanges();
+        }
 
     }
 }
