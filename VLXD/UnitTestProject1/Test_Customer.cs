@@ -63,5 +63,18 @@ namespace UnitTest
             khBUS = new KhachHangBUS();
             Assert.AreEqual(1, khBUS.SearchMaKHBUS(1).Count);
         }
+        [TestMethod]
+        public void Test_SearchMaKhachHang_Fail()
+        {
+            khBUS = new KhachHangBUS();
+            Assert.AreEqual(0, khBUS.SearchMaKHBUS(11).Count);
+        }
+
+        [TestMethod]
+        public void Test_SearchTenKhachHang_Suscess()
+        {
+            khBUS = new KhachHangBUS();
+            Assert.AreEqual(2, khBUS.SearchTenKHBUS("Hằng").Count);
+        }
     }
 }
