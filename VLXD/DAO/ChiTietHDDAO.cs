@@ -37,5 +37,18 @@ namespace DAO
             cthd.ThanhTien = cthdhdToUpDate.ThanhTien;
             db.SaveChanges();
         }
+        public List<ChiTietHD> SearchChiTietHD_MaHDDAO(int key)
+        {
+            List<ChiTietHD> result = new List<ChiTietHD>();
+            result = db.ChiTietHD.Where(p => p.MaHD == key).ToList();
+            return result;
+        }
+
+        public List<ChiTietHD> SearchChiTietHD_MaSPDAO(int key)
+        {
+            List<ChiTietHD> cthd = new List<ChiTietHD>();
+            cthd = db.ChiTietHD.Where(p => p.MaSP == key).ToList();
+            return cthd;
+        }
     }
 }
