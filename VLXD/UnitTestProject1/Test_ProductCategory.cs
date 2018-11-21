@@ -39,5 +39,21 @@ namespace UnitTest
 
             Assert.AreEqual(1, lspBUS.SearchTenLoaiSPBUS(lsp.TenLoai).Count);
         }
+        [TestMethod]
+        public void Test_DeleteLoaiSP_Success()
+        {
+            lspBUS = new LoaiSanPhamBUS();
+            Assert.AreEqual(7, lspBUS.LoadLoaiSPBUS().Count);
+            lspBUS.DeleteLoaiSPBUS(7);
+            Assert.AreEqual(6, lspBUS.LoadLoaiSPBUS().Count);
+        }
+
+        [TestMethod]
+        public void Test_SearchMaLoaiSP_Suscess()
+        {
+            lspBUS = new LoaiSanPhamBUS();
+
+            Assert.AreEqual(1, lspBUS.SearchMaLoaiSPBUS(1).Count);
+        }
     }
 }
