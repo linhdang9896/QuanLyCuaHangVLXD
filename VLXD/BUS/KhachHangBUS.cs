@@ -16,6 +16,14 @@ namespace BUS
         {
             return khDAO.LoadKHDAO();
         }
+        public void AddKHBUS(KhachHang kh)
+        {
+            khDAO.AddKHDAO(kh);
+        }
 
+        public void DeleteKHBUS(int id)
+        {
+            khDAO.DeleteKHDAO(id);
+        }
     }
 }
