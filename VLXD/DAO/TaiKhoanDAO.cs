@@ -79,6 +79,12 @@ namespace DAO
             user.MatKhau = userToUpdate.MatKhau;
             db.SaveChanges();
         }
+        public List<TaiKhoan> SearchMaTaiKhoanDAO(int key)
+        {
+            List<TaiKhoan> result = new List<TaiKhoan>();
+            result = db.TaiKhoan.Where(p => p.MaTaiKhoan == key).ToList();
+            return result;
+        }
 
     }
 }
