@@ -33,5 +33,15 @@ namespace UnitTest
 
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void Test_LoginWrongID()
+        {
+            uBUS = new TaiKhoanBUS();
+
+            int expected = -1;
+            int actual = uBUS.DangNhapBUS("LongLong", "123");
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
