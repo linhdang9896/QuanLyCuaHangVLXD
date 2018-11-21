@@ -44,4 +44,26 @@ namespace DAO
                 return 1;
             }
         }
+                public void AddHDDAO(HoaDon hd, ChiTietHD cthd)
+        {
+            db.HoaDon.Add(hd);
+            db.SaveChanges();
+
+            int idhd = hd.MaHD;
+            cthd.MaHD = idhd;
+
+            db.ChiTietHD.Add(cthd);
+            db.SaveChanges();
+        }
+
+        public void DeleteHDDAO(int id)
+        {
+            ChiTietHD cthd = db.ChiTietHD.Where(p => p.MaHD == id).SingleOrDefault();
+            db.ChiTietHD.Remove(cthd);
+            db.SaveChanges(); 
+
+            HoaDon hd = db.HoaDon.Find(id);
+            db.HoaDon.Remove(hd);
+            db.SaveChanges();
+        }
 }
