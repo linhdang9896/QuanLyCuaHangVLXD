@@ -30,6 +30,7 @@ namespace DAO
 
         public void AddLoaiSP(LoaiSanPham loai)
         {
+            // change
             db.LoaiSanPham.Add(loai);
             db.SaveChanges();
         }
