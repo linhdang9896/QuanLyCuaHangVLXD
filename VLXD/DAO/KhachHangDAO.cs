@@ -15,7 +15,18 @@ namespace DAO
         {
             return db.KhachHang.ToList();
         }
+        public void AddKHDAO(KhachHang kh)
+        {
+            db.KhachHang.Add(kh);
+            db.SaveChanges();
+        }
 
+        public void DeleteKHDAO(int id)
+        {
+            KhachHang kh = db.KhachHang.Find(id);
+            db.KhachHang.Remove(kh);
+            db.SaveChanges();
+        }
         
     }
 }
