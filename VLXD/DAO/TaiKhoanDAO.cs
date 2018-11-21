@@ -56,6 +56,22 @@ namespace DAO
             db.TaiKhoan.Add(user);
             db.SaveChanges();
         }
+        public void DeleteUserDAO(int idToDelete)
+        {
+            TaiKhoan user = db.TaiKhoan.Find(idToDelete);
+            db.TaiKhoan.Remove(user);
+            db.SaveChanges();
+        }
+
+        public void UpdateUserDAO(TaiKhoan userToUpdate)
+        {
+            TaiKhoan user = db.TaiKhoan.Find(userToUpdate.MaTaiKhoan);
+            user.TenTaiKhoan = userToUpdate.TenTaiKhoan;
+            user.MatKhau = userToUpdate.MatKhau;
+            user.ChucVu = userToUpdate.ChucVu;
+            user.MaNV = userToUpdate.MaNV;
+            db.SaveChanges();
+        }
 
     }
 }
