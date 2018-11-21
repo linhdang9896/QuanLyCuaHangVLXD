@@ -15,6 +15,23 @@ namespace DAO
         {
             return db.LoaiSanPham.ToList();
         }
+        public int KtraTrung(string id)
+        {
+            var ktr = db.LoaiSanPham.Find(id);
+            if (ktr == null)
+            {
+                return 1;
+            }
+            else
+            {
+                return -1;
+            }
+        }
 
+        public void AddLoaiSP(LoaiSanPham loai)
+        {
+            db.LoaiSanPham.Add(loai);
+            db.SaveChanges();
+        }
     }
 }
