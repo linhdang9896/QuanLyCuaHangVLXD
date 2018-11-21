@@ -17,6 +17,14 @@ namespace BUS
         {
             return hdDAO.LoadHDDAO();
         }
+        public int KtraConHangBUS(int maSPKtra)
+        {
+            return hdDAO.KtraConHangDAO(maSPKtra);
+        }
 
+        public void AddHDBUS(HoaDon hd,ChiTietHD cthd)
+        {
+            hdDAO.AddHDDAO(hd,cthd);
+        }
     }
 }
