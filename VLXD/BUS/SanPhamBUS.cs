@@ -24,5 +24,9 @@ namespace BUS
         {
             spDAO.DeleteSPDAO(id);
         }
+        public void UpdateSPBUS(SanPham spToUpdate)
+        {
+            spDAO.UpdateSPDAO(spToUpdate);
+        }
     }
 }
