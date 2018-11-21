@@ -16,6 +16,14 @@ namespace BUS
         {
             return userDAO.DangNhapDAO(uName, pass);
         }
+        public List<TaiKhoan> LoadUserBUS()
+        {
+            return userDAO.LoadUserDAO();
+        }
 
+        public void AddUserBUS(TaiKhoan user)
+        {
+            userDAO.AddUserDAO(user);
+        }
     }
 }
