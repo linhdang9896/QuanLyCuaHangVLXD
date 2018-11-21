@@ -15,5 +15,17 @@ namespace DAO
         {
             return db.ChiTietHD.ToList();
         }
+        public void AddChiTietHDDAO(ChiTietHD cthd)
+        {
+            db.ChiTietHD.Add(cthd);
+            db.SaveChanges();
+        }
+
+        public void DeleteChiTietHDDAO(int maHD, int maSP)
+        {
+            ChiTietHD cthd = db.ChiTietHD.Find(maHD, maSP);
+            db.ChiTietHD.Remove(cthd);
+            db.SaveChanges();
+        }
     }
 }
