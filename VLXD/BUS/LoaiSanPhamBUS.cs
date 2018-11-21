@@ -34,5 +34,14 @@ namespace BUS
         {
             loaiSPDAO.UpdateLoaiSPDAO(loaiToUpdate);
         }
+         public List<LoaiSanPham> SearchMaLoaiSPBUS(int key)
+        {
+            return loaiSPDAO.SearchMaLoaiSPDAO(key);
+        }
+
+        public List<LoaiSanPham> SearchTenLoaiSPBUS(string key)
+        {
+            return loaiSPDAO.SearchTenLoaiSPDAO(key);
+        }
     }
 }
