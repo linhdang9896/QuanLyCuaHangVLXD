@@ -15,5 +15,18 @@ namespace DAO
         {
             return db.NhanVien.ToList();
         }
+        public void AddNVDAO(NhanVien nv)
+        {
+            db.NhanVien.Add(nv);
+            db.SaveChanges();
+        }
+
+        public void DeleteNVDAO(int id)
+        {
+            NhanVien nv = db.NhanVien.Find(id);
+            db.NhanVien.Remove(nv);
+            db.SaveChanges();
+        }
+        
     }
 }
