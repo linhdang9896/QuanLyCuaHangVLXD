@@ -15,7 +15,17 @@ namespace DAO
         {
             return db.NhaSanXuat.ToList();
         }
-
+        public void AddNSX(NhaSanXuat nsx)
+        {
+            db.NhaSanXuat.Add(nsx);
+            db.SaveChanges();
+        }
+        public void DeleteNSXDAO(int id)
+        {
+            NhaSanXuat nsx = db.NhaSanXuat.Find(id);
+            db.NhaSanXuat.Remove(nsx);
+            db.SaveChanges();
+        }
         
     }
 }
