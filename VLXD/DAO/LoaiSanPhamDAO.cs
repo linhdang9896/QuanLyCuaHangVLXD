@@ -53,5 +53,12 @@ namespace DAO
             result = db.LoaiSanPham.Where(p => p.MaLoaiSP == key).ToList();
             return result;
         }
+        public List<LoaiSanPham> SearchTenLoaiSPDAO(string key)
+        {
+            List<LoaiSanPham> result = new List<LoaiSanPham>();
+            result = db.LoaiSanPham.Where(p => p.TenLoai == key).ToList();
+
+            return result;
+        }
     }
 }
