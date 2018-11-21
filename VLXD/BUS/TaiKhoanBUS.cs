@@ -38,5 +38,14 @@ namespace BUS
         {
             userDAO.UpdateUserMaNVDAO(user);
         }
+        public List<TaiKhoan> SearchMaTaiKhoan(int key)
+        {
+            return userDAO.SearchMaTaiKhoanDAO(key);
+        }
+
+        public List<TaiKhoan> SearchTenTaiKhoan(string key)
+        {
+            return userDAO.SearchTenTaiKhoanDAO(key);
+        }
     }
 }
