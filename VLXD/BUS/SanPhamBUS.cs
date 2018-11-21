@@ -16,6 +16,9 @@ namespace BUS
         {
             return spDAO.LoadSPDAO();
         }
-
+        public void AddSPBUS(SanPham sp)
+        {
+            spDAO.AddSPDAO(sp);
+        }
     }
 }
