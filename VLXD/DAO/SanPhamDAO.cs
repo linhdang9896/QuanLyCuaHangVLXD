@@ -15,7 +15,18 @@ namespace DAO
         {
             return db.SanPham.ToList();
         }
+        public void AddSPDAO(SanPham sp)
+        {
+            db.SanPham.Add(sp);
+            db.SaveChanges();
+        }
 
+        public void DeleteSPDAO(int id)
+        {
+            SanPham sp = db.SanPham.Find(id);
+            db.SanPham.Remove(sp);
+            db.SaveChanges();
+        }
         
     }
 }
