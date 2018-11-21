@@ -25,6 +25,9 @@ namespace BUS
         {
             nvDAO.DeleteNVDAO(id);
         }
-        
+        public void UpdateNVBUS(NhanVien nvToUpDate)
+        {
+            nvDAO.UpdateNVDAO(nvToUpDate);
+        }
     }
 }
