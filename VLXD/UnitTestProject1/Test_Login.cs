@@ -11,16 +11,18 @@ namespace UnitTest
     public class Test_Login
     {
         TaiKhoanBUS uBUS;
+
         [TestMethod]
-        public void Test_LoginByNhanVien()
+        public void Test_LoginByNhanVien1()
         {
             uBUS = new TaiKhoanBUS();
 
             int expected = 2;
-            int actual = uBUS.DangNhapBUS("Tam", "123");
+            int actual = uBUS.DangNhapBUS("Huy", "123");
 
             Assert.AreEqual(expected, actual);
         }
+               
         [TestMethod]
         public void Test_LoginByQuanLy()
         {
@@ -31,6 +33,7 @@ namespace UnitTest
 
             Assert.AreEqual(expected, actual);
         }
+
         [TestMethod]
         public void Test_LoginWrongID()
         {
